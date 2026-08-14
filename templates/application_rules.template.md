@@ -62,6 +62,17 @@ Default skip when:
 - Duplicate or already applied:
 - Closed role:
 
+## Application Deduplication
+
+Default:
+
+- Read the job pool and application log before ranking or applying.
+- Exclude exact jobs already marked `Submitted`, not the whole company.
+- Match by stable platform job ID or canonical URL first, then ATS requisition ID or canonical URL, then company plus normalized title and location when no stable identifier exists.
+- Treat tracking parameters, redirects, repost labels, and minor title punctuation as the same job when they resolve to the same underlying requisition.
+- Allow genuinely different roles at the same company to be screened normally.
+- Retry `Blocked` attempts only according to the recorded next action; do not treat them as submitted.
+
 ## Hand Off to User
 
 Stop and ask the user when:

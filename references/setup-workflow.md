@@ -129,6 +129,8 @@ Status meanings:
 
 Use `application_log.csv` for evidence and audit trail. Use `job_pool.csv` for the current state of each job.
 
+Before each search or application run, use both files for job-level deduplication. Prefer stable job IDs, canonical job URLs, or ATS requisition IDs over company names. Exclude an exact job already marked `Submitted`; do not blacklist its employer, because a different requisition at the same company may still be eligible. Normalize tracking parameters and repost links to the underlying job. Treat `Blocked` as retryable only when its recorded next action allows a retry.
+
 For lead-finding-only trials, do not create application log rows. No application attempt occurred. Use `job_pool.csv` for found jobs, `daily_dashboard.csv` for counts, `blocker_queue.csv` for user-dependent blockers, and `automation_rules.csv` for lessons learned.
 
 If a posting explicitly conflicts with an unknown high-impact fact, mark it `Needs user`, not `Pending`. Example: if sponsorship is `TBD` and the job says candidates needing sponsorship now or in the future cannot be considered, ask the user to confirm sponsorship before deciding whether to apply or skip.

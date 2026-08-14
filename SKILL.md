@@ -45,6 +45,8 @@ Use the templates in `templates/` to create user-owned files:
 
 Prioritize jobs by freshness, fit, feasibility, and conversion likelihood. Default to fresh jobs from the last 24 hours, then 48 hours if needed.
 
+Before ranking leads, read the job pool and application log and deduplicate at the job or requisition level. Prefer stable platform job IDs, canonical URLs, or ATS requisition IDs; treat tracking parameters and repost labels as the same job. Exclude an exact job already marked `Submitted`, not the entire employer. Different roles at that employer remain eligible for normal screening. A `Blocked` attempt is not a confirmed submission and may be retried only according to its recorded next action.
+
 Skip or defer roles that violate the user's rules, are clearly overleveled, are closed or duplicate, require unsupported work authorization, need missing materials, or involve long account-heavy flows with weak fit.
 
 ### 3. Route the Resume Strategy
